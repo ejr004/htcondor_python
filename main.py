@@ -2,15 +2,13 @@ import htcondor
 import classad
 import socket # We'll use this to automatically fill in our hostname
 
-
-schedd = htcondor.Schedd(schedd_ad)
-print(schedd)
-
 coll = htcondor.Collector()  # create the object representing the collector
 schedd_ad = coll.locate(htcondor.DaemonTypes.Schedd) # locate the default schedd
 
 print(schedd_ad)
 
+schedd = htcondor.Schedd(schedd_ad)
+print(schedd)
 # 1: Idle (I)
 # 2: Running (R)
 # 3: Removed (X)
